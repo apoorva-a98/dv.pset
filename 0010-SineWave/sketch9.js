@@ -1,4 +1,6 @@
-var x,y;
+var PI=22/7;
+var x=0,y;
+var a=PI/16,f=5;
 
 function setup(){
 	createCanvas(300, 300);
@@ -7,9 +9,8 @@ function setup(){
 }
 
 function draw(){
-x=150;
 x++;
-y=sin(x);
-ellipse(x,y, 5, 5);
-
+y=150+sin(a*PI/6)*50;
+a++;
+ellipse(x*10,y, 5, 5);
 }
