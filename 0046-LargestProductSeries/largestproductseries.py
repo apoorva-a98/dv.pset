@@ -6,13 +6,12 @@ def largest_product_series(no):
     max=0
     index=0
     for i in range(len(take)-13):
-        sum=0
+        product=1
         for j in range(13):
-            #print(take[i+j])
-            sum=sum+int(take[i+j])
-        if sum>max:
-            max=sum
+            product=product*int(take[i+j])
+        if(product>max):
+            max=product
             index=i
-    return sum,i
+    return "max product is: ",max,"the numbers are:",take[index:index+13]
 
 print(largest_product_series(a))
