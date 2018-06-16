@@ -6,6 +6,6 @@ def FibonacciNumbers():
         number=L[0]+L[1]
         L[0]=L[1]
         L[1]=number
-    print(L[0])
-    print("the number of digits",len(str(L[0])))
+    print(number)
+    print("the number of digits",len(str(number)))
 FibonacciNumbers()
