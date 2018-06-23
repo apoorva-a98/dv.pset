@@ -8,7 +8,7 @@ def factorial(n):
 #x=str(factorial(100))
 
 def binomial_expansion(X):
-    for i in range(X):
+    for i in range(X+1):
         print(factorial(X)/(factorial(X-i)*factorial(i)),"x^",X-i,"y^",i," +",end='')
 
 binomial_expansion(x)
