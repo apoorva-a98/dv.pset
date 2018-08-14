@@ -48,7 +48,10 @@ def breakup(no): #final function to display numbernames
         else:
             prt=""
 
-        if(b==0 and due>6 and test>6):
+        if(b==1 and test==2):
+            print(initialize(no//100),end="")
+            break
+        elif(b==0 and due>6 and test>6):
             print("Million ",end="")
             flag=1
         elif(b==0 and due>6):

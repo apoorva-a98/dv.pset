@@ -11,4 +11,4 @@ def primeFactor(n):
         L.append(n)
     print (L)
     print ('largest prime factor:',L[-1])
-primeFactor(600851475143)
+primeFactor(105)

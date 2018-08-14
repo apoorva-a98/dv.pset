@@ -1,4 +1,4 @@
-L=[['A',2,2],['B',4,2],['C',6,2],['D',4,6]]
+L=[['A',2,2],['B',4,2],['C',6,2],['D',4,6],['E',6,6]]
 
 def rotate(M):
     last=len(M)-1
@@ -82,6 +82,6 @@ def hameltonion_circuit(M):
             if flag==1:
                 break
         i=i+1
-    return "HAMELTONION CIRCUITS:" B,len(B)
+    return B,len(B)
 
 print(hameltonion_circuit(L))
