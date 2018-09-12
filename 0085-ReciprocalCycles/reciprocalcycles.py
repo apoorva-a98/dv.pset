@@ -1,10 +1,12 @@
+from decimal import *
+getcontext().prec = 1000
 def checkRecurring():
     max=0
     top=0
     index=0
-    for i in range (1,1000):
-        original=1/i
-        n=list(str(1/i))
+    for i in range (2,1000):
+        original=(Decimal(1)/Decimal(i))
+        n=list(str(original))
         #print (original)
         #print (n)
         n.pop(0)
@@ -28,5 +30,5 @@ def checkRecurring():
                         break
             if flag==1:
                 break
-    print ('Maximum Recurrance:',max,'Number:',index,', 1/',index,top)
+    print (original,'Maximum Recurrance:',max,'Number:',index,', 1/',index,top)
 checkRecurring()
