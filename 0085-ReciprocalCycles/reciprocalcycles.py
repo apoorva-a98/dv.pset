@@ -1,33 +1,32 @@
-def cycle_count(no):
-    count=1
-    for i in range(3,len(no),1):
-        if no[i]==no[2]:
-            return count
-        else:
-            count=count+1
-print(cycle_count(str(0.14561)))
-
-def check_recurring(no):
-    flag=0
-    for i in range(3,len(no),1):
-        if no[i]==no[2]:
-            flag=1
-            break
-    return flag
-
-def reciprocal():
+def checkRecurring():
     max=0
-    take_count=0
-    max_number=0
-    for i in range(2,1000,1):
-        x=str(1/i)
-        check=check_recurring(x)
-        if check==1:
-            take_count=cycle_count(x)
-            print(i,x,take_count)
-            if take_count>max:
-                max=take_count
-                max_number=i
-    return "the max number: ",max_number,1/max_number,max
-
-print(reciprocal())
+    top=0
+    index=0
+    for i in range (1,1000):
+        original=1/i
+        n=list(str(1/i))
+        #print (original)
+        #print (n)
+        n.pop(0)
+        n.pop(0)
+        difference=0
+        flag=0
+        for j in range (len(n)):
+            for k in range (j+1,len(n)):
+                if n[j]==n[k]:
+                    difference=k-j
+                    #print(j,k,k+difference)
+                    #print(n[j],n[k],n[k+difference])
+                    #print(original)
+                    #print ('m',k+difference,len(n))
+                    if (k+difference<len(n) and n[j]==n[k+difference]):
+                        if (difference>max):
+                            max=difference
+                            top=original
+                            index=i
+                        flag=1
+                        break
+            if flag==1:
+                break
+    print ('Maximum Recurrance:',max,'Number:',index,', 1/',index,top)
+checkRecurring()
