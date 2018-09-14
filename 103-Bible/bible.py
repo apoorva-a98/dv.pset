@@ -44,5 +44,9 @@ def countList(K):
     A = sorted(A.items(), key=operator.itemgetter(1), reverse=True)
     return A
 
+B=countList(tokenify(items))
+words = list(B.keys())
+count = list(B.values())
 
-print (countList(tokenify(items)))
+plt.bar(range(len(B)),count,tick_label=words)
+plt.show()
