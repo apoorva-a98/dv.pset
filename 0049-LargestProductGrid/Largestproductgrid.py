@@ -27,9 +27,9 @@ def largest_product_grid(no):
     number=0
     for i in range(20):
         for j in range(16+1):
-            sum=0
+            sum=1
             for k in range(4):
-                sum=sum+no[i][j+k]
+                sum=sum*no[i][j+k]
             if sum>max:
                 max=sum
                 index=i
@@ -38,31 +38,76 @@ def largest_product_grid(no):
                 direction='right'
                 number=no[index][index1]
 
-    for m in range(20):
-        for n in range(16+1):
-            sum=0
-            for o in range(4):
-                sum=sum+no[n+o][m]
+    for i in range(20):
+        for j in range(16+1):
+            sum=1
+            for k in range(4):
+                sum=sum*no[j+k][i]
                 #print(no[j+k][i])
             if sum>max:
                 max=sum
-                index=m
-                index1=n
+                index=i
+                index1=j
                 direction='down'
                 number=no[index][index1]
 
-    '''for i in range(16+1):
-        for j in range(16+1):
-            sum=0
+    for i in range(16+1):
+        for j in range(16+1-i):
+            sum=1
             for k in range(4):
-                sum=sum+no[i+k][j+k]
+                sum=sum*no[i+k][j+k]
             if sum>max:
                 max=sum
                 index=j
                 index1=i
-                direction='diagonally right'''
+                direction='diagonally right'
 
+    for i in range(16+1):
+        for j in range(16+1-i):
+            sum=1
+            for k in range(4):
+                sum=sum*no[i+k][j+k]
+            if sum>max:
+                max=sum
+                index=j
+                index1=i
+                direction='diagonally right'
+
+    for i in range(16+1): #row number
+        for j in range(16+1-i): #number on the row
+            sum=1
+            for k in range(4): #4 numbers
+                sum=sum*no[j+k][i+k]
+            if sum>max:
+                max=sum
+                index=j
+                index1=i
+                direction='diagonally right'
+
+    for i in range(20,3,-1):
+        for j in range(20,3+(20-i),-1):
+            sum=1
+            for k in range(4):
+                sum=sum*no[i+k][j+k]
+            if sum>max:
+                max=sum
+                index=j
+                index1=i
+                direction='diagonally left'
+
+    for i in range(20,3,-1): #row number
+        for j in range(20,3+(20-i),-1): #number on the row
+            sum=1
+            for k in range(4): #4 numbers
+                sum=sum*no[j+k][i+k]
+            if sum>max:
+                max=sum
+                index=j
+                index1=i
+                direction='diagonally left'
 
     return max,index,index1,direction,number
 
 print(largest_product_grid(a))
+
+atom://teletype/portal/56a0e11e-1e00-41f1-92fc-68b232457721
